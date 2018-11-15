@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+/*Ex 1*/
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+console.log("Ex 1: reverse string");
+console.log(reverseString("12345"));
+console.log(reverseString("asdfg"));
+/*Ex 2*/
+function remove_character(str, char_pos) 
+ {
+  part1 = str.substring(0, char_pos);
+  part2 = str.substring(char_pos + 1, str.length);
+  return (part1 + part2);
+ }
+console.log("\nEx 1: reverse string");
+console.log(remove_character("String",0));
+console.log(remove_character("String",4));
+/*Ex 3*/
+function div37(number){
+  if(number%3 == 0){
+  	return true;
+}
+  else if(number%7 === 0){
+  	return true;
+  }
+  else {
+  return false;
+  }
+}
+console.log("\nEx 3: \nn%7 && n%3 with 21 and 10");
+console.log(div37(21));
+console.log(div37(10));
+console.log("\nEx 4: \n" + parseFloat("10")+"/True " +parseFloat("years")+"/is not a number" );
+
+/*Ex 5*/
+var sum = [1,2,3].reduce((a,b)=>a+b,0);
+console.log("\nEx 5: \nThe sum of array[1,2,3] is= "+ sum);
+
+/*Ex 6*/
+function checkProp(obj, key) {
+    return obj != null && hasOwnProperty.call(obj, key);
+  }
+console.log("\nEx 6: \nCheck if an object contains  given property");
+console.log(checkProp({red: "red", green: "green", white: "white"}, "green"));
+console.log(checkProp({red: "red", green: "green", white: "white"}, "black"));
+
+</script>
+</body>
+</html>
