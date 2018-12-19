@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+    <head><title>Laborator 6</title></head>
 <body>
 <script>
+    
 /*Ex 1*/
 function reverseString(str) {
     return str.split("").reverse().join("");
@@ -9,16 +11,14 @@ function reverseString(str) {
 console.log("Ex 1: reverse string");
 console.log(reverseString("12345"));
 console.log(reverseString("asdfg"));
+    
 /*Ex 2*/
-function remove_character(str, char_pos) 
- {
-  part1 = str.substring(0, char_pos);
-  part2 = str.substring(char_pos + 1, str.length);
-  return (part1 + part2);
- }
-console.log("\nEx 1: reverse string");
-console.log(remove_character("String",0));
-console.log(remove_character("String",4));
+function remove_character(str, index){
+    return str.substring(0, index) + str.substring(index + 1, str.length);
+}
+console.log(remove_character('String', 4));
+console.log('\n');
+    
 /*Ex 3*/
 function div37(number){
   if(number%3 == 0){
@@ -28,21 +28,38 @@ function div37(number){
   	return true;
   }
   else {
-  return false;
+      return false;
   }
 }
 console.log("\nEx 3: \nn%7 && n%3 with 21 and 10");
 console.log(div37(21));
 console.log(div37(10));
-console.log("\nEx 4: \n" + parseFloat("10")+"/True " +parseFloat("years")+"/is not a number" );
 
+/*Ex 4*/
+//console.log("\nEx 4: \n" + parseFloat("10")+"/True " +parseFloat("years")+"/is not a number" );
+function isNumeric(nr)
+{
+        return isNaN(nr);
+}
+console.log(isNumeric(1));
+console.log(isNumeric('asd'));
+console.log('\n');
 /*Ex 5*/
-var sum = [1,2,3].reduce((a,b)=>a+b,0);
-console.log("\nEx 5: \nThe sum of array[1,2,3] is= "+ sum);
-
+function suma(arr)
+{
+    var s = 0;
+    for(var i = 0;i < arr.length; i++)
+    {
+        s = s + arr[i];
+    }
+    return s;
+}
+    console.log(suma([1,2,3]));
+    console.log(suma([1,2,'a',3]));
+    console.log(sum('asd')+'\n');
 /*Ex 6*/
 function checkProp(obj, key) {
-    return obj != null && hasOwnProperty.call(obj, key);
+    return obj.hasOwnProperty(key);
   }
 console.log("\nEx 6: \nCheck if an object contains  given property");
 console.log(checkProp({red: "red", green: "green", white: "white"}, "green"));
